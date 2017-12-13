@@ -1,0 +1,72 @@
+<div class="container ">
+    <div class="panel panel-primary" *ngIf="mode=='1'">
+        <div class="panel panel-heading">Users</div>
+        <div class="panel panel-body">
+            <div>
+                <form class="form-inline" (ngSubmit)="mysubmit()">
+                    <label for="text">name</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.name" name="name" id="name">
+                    <label for="text">username</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.username" name="username" id="username">
+                    <label for="text">email</label>
+                    <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="email">
+                    <div class="form-check">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>name</th>
+                    <th>username</th>
+                    <th>email</th>
+                </tr>
+                <tr *ngFor="let u of users">
+                    <th>{{u.id}}</th>
+                    <th>{{u.username}}</th>
+                    <th>{{u.email}}</th>
+                    <th><button class="btn btn-danger" (click)="delete(u)">Delete</button></th>
+                    <th><button class="btn btn-success" (click)="Edite(u)">Edit</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- --------------------Edit--------------------------------- -->
+<div class="container ">
+    <div class="panel panel-primary" *ngIf="mode=='0'">
+        <div class="panel panel-heading">Edit</div>
+        <div class="panel panel-body">
+            <div>
+                <form class="form-inline" (ngSubmit)="mysubmit()">
+                    <label for="text">name</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.name" name="name" id="name">
+                    <label for="text">username</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.username" name="username" id="username">
+                    <label for="text">email</label>
+                    <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="email">
+                    <div class="form-check">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>name</th>
+                    <th>username</th>
+                    <th>email</th>
+                </tr>
+                <tr *ngFor="let u of users">
+                    <th>{{u.id}}</th>
+                    <th>{{u.username}}</th>
+                    <th>{{u.email}}</th>
+                    <th><button class="btn btn-danger" (click)="delete(u)">Delete</button></th>
+                    <th><button class="btn btn-success" (click)="Edite(u)">Edit</button></th>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container ">
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">Job</div>
+        <div class="panel panel-body">
+
+
+            <!-- <div><img src={{myimage}}></div> -->
+            <h3> {{'ALI RIDHA HAOUARI' |uppercase}}</h3><br>
+            <p> {{age | date}}</p>
+            <p><button (mousedrag)="click()">  Mousup</button></p>
+            <div [class.myClass]=myClass>
+
+
+                <ul>
+                    <li *ngFor="let myjob of job; let i=index">
+                        <h3>{{i}}-{{myjob}}</h3>
+                    </li>
+
+                </ul>
+
+            </div>
+            <br>
+
+
+            <div>
+                <ul class="mycolor">
+                    <li *ngFor="let item of plang; let i=index">
+                        {{item.languagename}}
+
+                    </li>
+                    <li *ngIf="f then  anthorfamile">{{famile}}</li>
+                    <li ng-template="#anthorfamile">ALIALI</li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
