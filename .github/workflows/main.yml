@@ -1,0 +1,19 @@
+name: Issue Automation
+
+on:
+  issues:
+    types: [opened, edited, closed]
+
+jobs:
+  print_issue_details:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Print Issue Details
+      run: |
+        echo "Issue Number: ${{ github.event.issue.number }}"
+        echo "Issue Title: ${{ github.event.issue.title }}"
+        echo "Issue Body: ${{ github.event.issue.body }}"
+        echo "Issue State: ${{ github.event.issue.state }}"
